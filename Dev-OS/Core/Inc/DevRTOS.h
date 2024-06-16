@@ -5,8 +5,14 @@
  *      Author: deveshshevde
  */
 
+#include "main.h"
 #ifndef INC_DEVRTOS_H_
 #define INC_DEVRTOS_H_
+
+
+
+
+typedef void (*threadHandler)();
 
 
 
@@ -21,9 +27,13 @@ typedef struct Threads
 
 
 
-typedef void (*threadHandler)();
 
 
 
+void DEVOS_Init(void);
+
+void DEVOS_Scheduler(void);
+
+void PendSV_Handler(void) __attribute__((naked));
 
 #endif /* INC_DEVRTOS_H_ */
